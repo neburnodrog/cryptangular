@@ -1,4 +1,6 @@
-<p>
-  Server with ID {{ serverId }} is
-  <span [ngStyle]="{ color: getColor() }">{{ serverStatus }}</span>
-</p>
+<div class="server" [ngClass]="getClasses()">
+  <p>
+    Server with ID {{ serverId }} is
+    <span [ngStyle]="{ color: getColor() }">{{ serverStatus }}</span>
+  </p>
+</div>

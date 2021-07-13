@@ -1,0 +1,19 @@
+.server {
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.online {
+  background: azure;
+}
+
+.offline {
+  background: rgb(247, 201, 255);
+}
+
+.server p {
+  margin: 1rem;
+}
