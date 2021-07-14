@@ -1,10 +1,25 @@
 .server {
   border: 1px solid gray;
   display: flex;
+  flex-flow: column;
   justify-content: space-evenly;
   align-items: center;
   margin: 0.5rem;
   border-radius: 0.3rem;
+}
+
+.serverNameWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.descriptionWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .online {

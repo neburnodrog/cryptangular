@@ -1,10 +1,19 @@
 <div class="server" [ngClass]="getClasses()">
-  <p>
-    Server {{ server.name }} with ID {{ server.id }} is
-    <span [ngStyle]="{ color: getColor() }">{{
-      server.status ? "online" : "offline"
-    }}</span>
-  </p>
-  <small *ngIf="server.description"></small>
-  <button>on</button>
+  <div class="serverNameWrapper">
+    <p>
+      Server {{ server.name }} with ID {{ server.id }} is
+      <span [ngStyle]="{ color: getColor() }">{{
+        server.status ? "online" : "offline"
+      }}</span>
+    </p>
+
+    <button (click)="onToggleStatus(!server.status)">
+      {{ server.status ? "Turn Off" : "Turn On" }}
+    </button>
+  </div>
+  <div class="descriptionWrapper">
+    <small *ngIf="server.description !== ''"
+      >Description: {{ server.description }}</small
+    >
+  </div>
 </div>

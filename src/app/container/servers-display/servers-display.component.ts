@@ -12,5 +12,9 @@ export class ServersDisplayComponent implements OnInit {
 
   constructor() {}
 
+  // onStatusToggled() {
+
+  // }
+
   ngOnInit(): void {}
 }
