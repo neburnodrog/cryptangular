@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Server } from '../server.model';
 
 @Component({
   selector: 'app-server',
@@ -6,19 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.scss'],
 })
 export class ServerComponent implements OnInit {
-  serverId = 1;
-  serverStatus = '';
+  @Input() server: Server;
 
-  constructor() {
-    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
-  }
+  constructor() {}
 
   getColor() {
-    return this.serverStatus === 'online' ? 'green' : 'red';
+    return this.server.status ? 'green' : 'red';
   }
 
   getClasses() {
-    return this.serverStatus === 'online' ? 'online' : 'offline';
+    return this.server.status ? 'online' : 'offline';
   }
 
   ngOnInit(): void {}

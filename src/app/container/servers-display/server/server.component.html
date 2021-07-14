@@ -1,6 +1,10 @@
 <div class="server" [ngClass]="getClasses()">
   <p>
-    Server with ID {{ serverId }} is
-    <span [ngStyle]="{ color: getColor() }">{{ serverStatus }}</span>
+    Server {{ server.name }} with ID {{ server.id }} is
+    <span [ngStyle]="{ color: getColor() }">{{
+      server.status ? "online" : "offline"
+    }}</span>
   </p>
+  <small *ngIf="server.description"></small>
+  <button>on</button>
 </div>

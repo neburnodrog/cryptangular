@@ -1,4 +1,1 @@
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers" [server]="server"></app-server>

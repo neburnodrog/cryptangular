@@ -1,7 +1,8 @@
 .server {
   border: 1px solid gray;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 0.5rem;
   border-radius: 0.3rem;
 }
@@ -16,4 +17,19 @@
 
 .server p {
   margin: 1rem;
+}
+
+.server button {
+  padding: 0.3rem 1.8rem;
+  background: white;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+
+.row {
+  margin-top: 2rem;
+}
+
+.one {
+  border-right: 1px solid darkslateblue;
 }
