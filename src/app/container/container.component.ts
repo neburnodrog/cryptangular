@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { ServersService } from '../services/servers.service';
 import { Server } from './server.model';
 
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
+  providers: [ServersService],
 })
 export class ContainerComponent implements OnInit {
-  servers: Server[] = [
-    new Server(1, 'Test1', 'Test server 1', Math.random() > 0.5),
-  ];
+  servers: Server[] = [];
 
-  constructor() {}
+  constructor(private serversService: ServersService) {}
 
   onServerCreated(serverData: {
     serverName: string;
@@ -21,8 +21,12 @@ export class ContainerComponent implements OnInit {
     const newServerId = this.servers.length + 1;
     const { serverName, description, init } = serverData;
 
-    this.servers.push(new Server(newServerId, serverName, description, init));
+    this.serversService.addServer(
+      new Server(newServerId, serverName, description, init)
+    );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.servers = this.serversService.servers;
+  }
 }

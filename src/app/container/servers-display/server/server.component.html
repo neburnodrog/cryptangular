@@ -10,10 +10,15 @@
     <button (click)="onToggleStatus(!server.status)">
       {{ server.status ? "Turn Off" : "Turn On" }}
     </button>
+
+    <a
+      href="#"
+      class="dropdown-toggle"
+      (click)="hideDescription = !hideDescription"
+      ><small>Show Description <span class="caret"></span></small
+    ></a>
   </div>
-  <div class="descriptionWrapper">
-    <small *ngIf="server.description !== ''"
-      >Description: {{ server.description }}</small
-    >
+  <div class="descriptionWrapper" [ngClass]="{ hide: hideDescription }">
+    <small>Description: {{ server.description }}</small>
   </div>
 </div>

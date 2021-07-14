@@ -48,3 +48,18 @@
 .one {
   border-right: 1px solid darkslateblue;
 }
+
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.hide {
+  display: none;
+}

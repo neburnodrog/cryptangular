@@ -7,8 +7,8 @@ import { Server } from '../../server.model';
   styleUrls: ['./server.component.scss'],
 })
 export class ServerComponent implements OnInit {
+  hideDescription: boolean = true;
   @Input() server: Server;
-  // @Output() toggleStatus = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -22,7 +22,6 @@ export class ServerComponent implements OnInit {
 
   onToggleStatus(newServerStatus: boolean) {
     this.server.status = newServerStatus;
-    // this.toggleStatus.emit(newServerStatus);
   }
 
   ngOnInit(): void {}
