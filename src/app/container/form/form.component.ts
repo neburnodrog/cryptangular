@@ -25,10 +25,10 @@ export class FormComponent implements OnInit, OnChanges, DoCheck {
 
   constructor() {}
 
-  onCreateServer() {
+  onCreateServer(description: HTMLInputElement) {
     this.serverCreated.emit({
       serverName: this.serverName,
-      description: this.description,
+      description: description.value,
       init: this.init,
     });
   }
