@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Server } from '../server.model';
+import { Server } from '../../server.model';
 
 @Component({
   selector: 'app-server',

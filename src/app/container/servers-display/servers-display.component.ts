@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { Server } from './server.model';
+import { Server } from '../server.model';
 
 @Component({
   selector: 'app-servers-display',
@@ -8,9 +8,7 @@ import { Server } from './server.model';
   styleUrls: ['./servers-display.component.scss'],
 })
 export class ServersDisplayComponent implements OnInit {
-  servers: Server[] = [
-    new Server(1, 'Test1', 'Test server 1', Math.random() > 0.5),
-  ];
+  @Input() servers: Server[];
 
   constructor() {}
 

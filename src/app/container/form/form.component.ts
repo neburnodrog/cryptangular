@@ -1,36 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  DoCheck,
+  SimpleChanges,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit {
-  allowNewServer = false;
+export class FormComponent implements OnInit, OnChanges, DoCheck {
+  @Output() serverCreated = new EventEmitter<{
+    serverName: string;
+    description: string;
+    init: boolean;
+  }>();
   serverName = '';
   description = '';
-  serverCreationStatus = 'no server was created';
-  serverCreated = false;
+  init: boolean = false;
 
-  constructor() {
-    setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
+  constructor() {}
+
+  onCreateServer() {
+    this.serverCreated.emit({
+      serverName: this.serverName,
+      description: this.description,
+      init: this.init,
+    });
   }
 
-  onCreateServer(e: MouseEvent) {
-    this.serverCreationStatus =
-      'Server was created with name: ' + this.serverName;
-    this.serverCreated = true;
-  }
+  ngDoCheck(): void {}
 
-  onUpdateServerName(e: InputEvent) {
-    this.serverName = (<HTMLInputElement>e.target).value;
-  }
-
-  onUpdateDesc(e: InputEvent) {
-    this.description = (<HTMLInputElement>e.target).value;
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
   ngOnInit(): void {}
 }
