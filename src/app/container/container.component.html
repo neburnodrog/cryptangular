@@ -1,20 +1,15 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
+    <a class="nav-link active" aria-current="page" href="#">Servers</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Charts</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Home</a>
   </li>
 </ul>
 
-<div class="row routesContainer">
-  <div class="col-sm-4 one">
-    <app-form></app-form>
-  </div>
-  <div class="col-sm-8 two">
-    <app-servers-display></app-servers-display>
-  </div>
+<div class="routesContainer">
+  <router-outlet> </router-outlet>
 </div>

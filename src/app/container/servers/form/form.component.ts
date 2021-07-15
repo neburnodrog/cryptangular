@@ -1,6 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 
-import { ServersService } from 'src/app/container/services/servers.service';
+import { ServersService } from 'src/app/container/servers/services/servers.service';
 
 @Component({
   selector: 'app-form',

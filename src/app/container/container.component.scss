@@ -4,14 +4,11 @@
   border: 2px solid darkslateblue;
   border-radius: 5px;
   box-shadow: 2px 2px 2px darkslateblue;
+  min-width: 100%;
 }
 
 a.active {
   border-top: 1px solid darkslateblue !important;
   border-left: 1px solid darkslateblue !important;
   border-right: 1px solid darkslateblue !important;
-}
-
-.one {
-  border-right: 2px solid darkslateblue;
 }

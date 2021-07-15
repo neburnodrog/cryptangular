@@ -9,14 +9,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContainerComponent } from './container/container.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormComponent } from './container/form/form.component';
-import { ServersDisplayComponent } from './container/servers-display/servers-display.component';
-import { ServerComponent } from './container/servers-display/server/server.component';
+import { FormComponent } from './container/servers/form/form.component';
+import { ServersDisplayComponent } from './container/servers/servers-display/servers-display.component';
+import { ServerComponent } from './container/servers/servers-display/server/server.component';
 import { UnlessDirective } from './directives/unless.directive';
 import { RouterModule, Routes } from '@angular/router';
+import { ServersComponent } from './container/servers/servers.component';
 
 const appRoutes: Routes = [
-  { path: '', component: ContainerComponent },
+  { path: '', component: ServersComponent },
   { path: 'servers', component: ContainerComponent },
   { path: 'servers', component: ContainerComponent },
 ];
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     ServersDisplayComponent,
     ServerComponent,
     UnlessDirective,
+    ServersComponent,
   ],
   imports: [
     BrowserModule,
