@@ -17,6 +17,7 @@ import { ServersContainerComponent } from './container/servers-container/servers
 import { ChartsContainerComponent } from './container/charts-container/charts-container.component';
 import { HomeContainerComponent } from './container/home-container/home-container.component';
 import { ServerDetailsComponent } from './container/servers-container/server-details/server-details.component';
+import { ServerEditComponent } from './container/servers/server-edit/server-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ServerDetailsComponent } from './container/servers-container/server-det
     ChartsContainerComponent,
     HomeContainerComponent,
     ServerDetailsComponent,
+    ServerEditComponent,
   ],
   imports: [
     BrowserModule,

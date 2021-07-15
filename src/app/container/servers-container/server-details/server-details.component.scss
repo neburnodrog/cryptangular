@@ -10,3 +10,10 @@ strong {
 ul {
   list-style-type: ">> ";
 }
+
+.console {
+  font-family: monospace;
+  background-color: hsl(192deg 100% 11%);
+  color: whitesmoke;
+  padding: 3rem;
+}
