@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Server } from '../../server.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Server } from '../../models/server.model';
+import { ServersService } from '../../services/servers.service';
 
 @Component({
   selector: 'app-server',
@@ -10,7 +11,7 @@ export class ServerComponent implements OnInit {
   hideDescription: boolean = true;
   @Input() server: Server;
 
-  constructor() {}
+  constructor(public serverService: ServersService) {}
 
   getColor() {
     return this.server.status ? 'green' : 'red';
@@ -22,6 +23,10 @@ export class ServerComponent implements OnInit {
 
   onToggleStatus(newServerStatus: boolean) {
     this.server.status = newServerStatus;
+  }
+
+  onDeleteServer() {
+    this.serverService.deleteServer(this.server);
   }
 
   ngOnInit(): void {}

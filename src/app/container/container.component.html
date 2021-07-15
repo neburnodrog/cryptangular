@@ -1,8 +1,20 @@
-<div class="row">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+</ul>
+
+<div class="row routesContainer">
   <div class="col-sm-4 one">
-    <app-form (serverCreated)="onServerCreated($event)"></app-form>
+    <app-form></app-form>
   </div>
   <div class="col-sm-8 two">
-    <app-servers-display [servers]="servers"></app-servers-display>
+    <app-servers-display></app-servers-display>
   </div>
 </div>

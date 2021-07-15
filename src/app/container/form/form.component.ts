@@ -1,41 +1,33 @@
-import {
-  Component,
-  OnInit,
-  OnChanges,
-  DoCheck,
-  SimpleChanges,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+
+import { ServersService } from 'src/app/container/services/servers.service';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit, OnChanges, DoCheck {
-  @Output() serverCreated = new EventEmitter<{
-    serverName: string;
-    description: string;
-    init: boolean;
-  }>();
+export class FormComponent implements OnInit, DoCheck {
   serverName = '';
   description = '';
-  init: boolean = false;
+  initStatus: boolean = false;
 
-  constructor() {}
+  constructor(private serversService: ServersService) {}
 
-  onCreateServer(description: HTMLInputElement) {
-    this.serverCreated.emit({
-      serverName: this.serverName,
-      description: description.value,
-      init: this.init,
-    });
+  onCreateServer() {
+    this.serversService.addServer(
+      this.serverName,
+      this.description,
+      this.initStatus
+    );
   }
 
-  ngDoCheck(): void {}
-
-  ngOnChanges(changes: SimpleChanges): void {}
+  ngDoCheck() {
+    if (this.serverName.length >= 22) {
+      this.serverName = this.serverName.slice(0, 20);
+      alert('The name of the server cannot be longer than 20 chars');
+    }
+  }
 
   ngOnInit(): void {}
 }

@@ -13,6 +13,13 @@ import { FormComponent } from './container/form/form.component';
 import { ServersDisplayComponent } from './container/servers-display/servers-display.component';
 import { ServerComponent } from './container/servers-display/server/server.component';
 import { UnlessDirective } from './directives/unless.directive';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: ContainerComponent },
+  { path: 'servers', component: ContainerComponent },
+  { path: 'servers', component: ContainerComponent },
+];
 
 @NgModule({
   declarations: [
@@ -29,6 +36,7 @@ import { UnlessDirective } from './directives/unless.directive';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
     HighchartsChartModule,
   ],
   providers: [],

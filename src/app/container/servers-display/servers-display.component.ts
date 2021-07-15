@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Server } from '../server.model';
+import { Server } from '../models/server.model';
+import { ServersService } from 'src/app/container/services/servers.service';
 
 @Component({
   selector: 'app-servers-display',
@@ -8,9 +9,11 @@ import { Server } from '../server.model';
   styleUrls: ['./servers-display.component.scss'],
 })
 export class ServersDisplayComponent implements OnInit {
-  @Input() servers: Server[];
+  servers: Server[] = [];
 
-  constructor() {}
+  constructor(private serversService: ServersService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.servers = this.serversService.servers;
+  }
 }

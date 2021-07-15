@@ -1,13 +1,16 @@
 <div class="server" [ngClass]="getClasses()">
   <div class="serverNameWrapper">
     <p>
-      Server {{ server.name }} with ID {{ server.id }} is
-      <span [ngStyle]="{ color: getColor() }">{{
-        server.status ? "online" : "offline"
-      }}</span>
+      Server <u>{{ server.name }}</u> with ID {{ server.id }} is
+      <span [ngStyle]="{ color: getColor() }"
+        ><strong>{{ server.status ? "online" : "offline" }}</strong></span
+      >
     </p>
 
-    <button (click)="onToggleStatus(!server.status)">
+    <button
+      [ngClass]="server.status ? 'btn btn-danger' : 'btn btn-success'"
+      (click)="onToggleStatus(!server.status)"
+    >
       {{ server.status ? "Turn Off" : "Turn On" }}
     </button>
 
@@ -17,8 +20,13 @@
       (click)="hideDescription = !hideDescription"
       ><small>Show Description <span class="caret"></span></small
     ></a>
+    <button type="button" class="btn btn-danger" (click)="onDeleteServer()">
+      Delete
+    </button>
   </div>
   <div class="descriptionWrapper" [ngClass]="{ hide: hideDescription }">
-    <small>Description: {{ server.description }}</small>
+    <small
+      >Description: <em>{{ server.description }}</em></small
+    >
   </div>
 </div>

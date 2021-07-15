@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ServersService } from '../services/servers.service';
-import { Server } from './server.model';
+
+import { Server } from './models/server.model';
+import { ServersService } from './services/servers.service';
 
 @Component({
   selector: 'app-container',
@@ -12,19 +13,6 @@ export class ContainerComponent implements OnInit {
   servers: Server[] = [];
 
   constructor(private serversService: ServersService) {}
-
-  onServerCreated(serverData: {
-    serverName: string;
-    description: string;
-    init: boolean;
-  }) {
-    const newServerId = this.servers.length + 1;
-    const { serverName, description, init } = serverData;
-
-    this.serversService.addServer(
-      new Server(newServerId, serverName, description, init)
-    );
-  }
 
   ngOnInit(): void {
     this.servers = this.serversService.servers;
