@@ -4,8 +4,8 @@ import { ServersService } from '../../services/servers.service';
 
 @Component({
   selector: 'app-server',
-  templateUrl: './server.component.html',
-  styleUrls: ['./server.component.scss'],
+  templateUrl: './server-card.component.html',
+  styleUrls: ['./server-card.component.scss'],
 })
 export class ServerComponent implements OnInit {
   hideDescription: boolean = true;
