@@ -15,11 +15,15 @@ import { ServerComponent } from './container/servers/servers-display/server/serv
 import { UnlessDirective } from './directives/unless.directive';
 import { RouterModule, Routes } from '@angular/router';
 import { ServersComponent } from './container/servers/servers.component';
+import { ChartsComponent } from './container/charts/charts.component';
+import { HomeComponent } from './container/home/home.component';
+import { ServerDetailsComponent } from './container/servers/server-details/server-details.component';
 
 const appRoutes: Routes = [
-  { path: '', component: ServersComponent },
-  { path: 'servers', component: ContainerComponent },
-  { path: 'servers', component: ContainerComponent },
+  { path: '', component: HomeComponent },
+  { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id', component: ServerDetailsComponent },
+  { path: 'charts', component: ChartsComponent },
 ];
 
 @NgModule({
@@ -33,6 +37,9 @@ const appRoutes: Routes = [
     ServerComponent,
     UnlessDirective,
     ServersComponent,
+    ChartsComponent,
+    HomeComponent,
+    ServerDetailsComponent,
   ],
   imports: [
     BrowserModule,
