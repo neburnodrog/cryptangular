@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Server } from './servers/models/server.model';
-import { ServersService } from './servers/services/servers.service';
+import { Server } from './servers-container/models/server.model';
+import { ServersService } from './servers-container/services/servers.service';
 
 @Component({
   selector: 'app-container',
