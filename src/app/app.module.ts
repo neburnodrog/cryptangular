@@ -18,6 +18,7 @@ import { ChartsContainerComponent } from './container/charts-container/charts-co
 import { HomeContainerComponent } from './container/home-container/home-container.component';
 import { ServerDetailsComponent } from './container/servers-container/server-details/server-details.component';
 import { ServerEditComponent } from './container/servers/server-edit/server-edit.component';
+import { CryptoContainerComponent } from './container/crypto-container/crypto-container.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ServerEditComponent } from './container/servers/server-edit/server-edit
     HomeContainerComponent,
     ServerDetailsComponent,
     ServerEditComponent,
+    CryptoContainerComponent,
   ],
   imports: [
     BrowserModule,

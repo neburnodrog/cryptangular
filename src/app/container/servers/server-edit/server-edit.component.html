@@ -1,1 +1,40 @@
-<p>server-edit works!</p>
+<form>
+  <div class="mb-3">
+    <label for="server-name" class="form-label">Server Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="server-name"
+      name="server-name"
+      [(ngModel)]="serverName"
+      [ngClass]="{ invalid: invalidServerLength }"
+    />
+    <div
+      class="form-text"
+      [innerText]="
+        invalidServerLength
+          ? 'The server\'s length cannot be longer than 20 characters'
+          : 'Edit the server\'s name'
+      "
+      [ngStyle]="invalidServerLength ? { color: 'red' } : { color: 'black' }"
+    ></div>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      name="description"
+      [(ngModel)]="serverDesc"
+    />
+    <div class="form-text">Edit the server's description</div>
+
+    <button class="btn btn-primary" (click)="onSaveChanges()">
+      Save Changes
+    </button>
+    <button class="btn btn-warning" (click)="onDiscardChanges()">
+      Discard Changes
+    </button>
+  </div>
+</form>

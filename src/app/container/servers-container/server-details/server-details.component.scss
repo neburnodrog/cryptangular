@@ -8,7 +8,7 @@ strong {
 }
 
 ul {
-  list-style-type: ">> ";
+  list-style-type: none;
 }
 
 .console {
@@ -16,4 +16,12 @@ ul {
   background-color: hsl(192deg 100% 11%);
   color: whitesmoke;
   padding: 3rem;
+}
+
+h3 {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 0;
 }
