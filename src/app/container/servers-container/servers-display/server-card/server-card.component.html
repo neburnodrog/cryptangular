@@ -1,10 +1,12 @@
 <div class="server" [ngClass]="getClasses()">
   <div class="serverNameWrapper">
     <p>
-      Server <u>{{ server.name }}</u> with ID {{ server.id }} is
-      <span [ngStyle]="{ color: getColor() }"
-        ><strong>{{ server.status ? "online" : "offline" }}</strong></span
-      >
+      Server
+      <a [routerLink]="['/servers', server.id]">{{ server.name }}</a> with ID
+      {{ server.id }} is
+      <span [ngStyle]="{ color: getColor() }">
+        <strong>{{ server.status ? "online" : "offline" }}</strong>
+      </span>
     </p>
 
     <button
@@ -14,19 +16,20 @@
       {{ server.status ? "Turn Off" : "Turn On" }}
     </button>
 
-    <a
-      href="#"
-      class="dropdown-toggle"
-      (click)="hideDescription = !hideDescription"
-      ><small>Show Description <span class="caret"></span></small
-    ></a>
+    <a class="dropdown-toggle" (click)="hideDescription = !hideDescription">
+      <small>
+        Show Description
+        <span class="caret"></span>
+      </small>
+    </a>
     <button type="button" class="btn btn-danger" (click)="onDeleteServer()">
       Delete
     </button>
   </div>
   <div class="descriptionWrapper" [ngClass]="{ hide: hideDescription }">
-    <small
-      >Description: <em>{{ server.description }}</em></small
-    >
+    <small>
+      Description:
+      <em>{{ server.description }}</em>
+    </small>
   </div>
 </div>

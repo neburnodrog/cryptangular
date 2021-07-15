@@ -10,6 +10,8 @@ import { ServersService } from '../services/servers.service';
 })
 export class ServerDetailsComponent implements OnInit {
   server: Server;
+  nextId: number;
+  prevId: number;
 
   constructor(
     public route: ActivatedRoute,
