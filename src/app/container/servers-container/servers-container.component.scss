@@ -1,3 +1,19 @@
 .one {
   border-right: 2px solid darkslateblue;
+  max-height: 60vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.one:-webkit-scrollbar {
+  display: none;
+}
+
+app-form {
+  margin-bottom: 2rem;
+}
+
+app-servers-display {
+  margin-top: 2rem;
 }

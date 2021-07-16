@@ -21,6 +21,9 @@ import { HomeContainerComponent } from './container/home-container/home-containe
 import { ServerDetailsComponent } from './container/servers-container/server-details/server-details.component';
 import { ServerEditComponent } from './container/servers/server-edit/server-edit.component';
 import { CryptoContainerComponent } from './container/crypto-container/crypto-container.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { CryptoContainerComponent } from './container/crypto-container/crypto-co
     ServerDetailsComponent,
     ServerEditComponent,
     CryptoContainerComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ import { CryptoContainerComponent } from './container/crypto-container/crypto-co
     NoopAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

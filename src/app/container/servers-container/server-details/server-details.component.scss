@@ -17,6 +17,24 @@ li {
   margin-bottom: 1rem;
 }
 
+.serverDetailsWrapper {
+  border-right: 2px solid darkslateblue;
+  padding: 1rem;
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.consoleWrapper {
+  margin-left: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid darkslateblue;
+}
+
 .console {
   font-family: monospace;
   background-color: hsl(192deg 80% 21%);

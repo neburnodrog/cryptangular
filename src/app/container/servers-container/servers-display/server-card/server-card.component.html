@@ -9,22 +9,12 @@
       </span>
     </p>
 
-    <button
-      [ngClass]="server.status ? 'btn btn-danger' : 'btn btn-success'"
-      (click)="onToggleStatus(!server.status)"
-    >
-      {{ server.status ? "Turn Off" : "Turn On" }}
-    </button>
-
     <a class="dropdown-toggle" (click)="hideDescription = !hideDescription">
       <small>
         Show Description
         <span class="caret"></span>
       </small>
     </a>
-    <button type="button" class="btn btn-danger" (click)="onDeleteServer()">
-      Delete
-    </button>
   </div>
   <div class="descriptionWrapper" [ngClass]="{ hide: hideDescription }">
     <small>

@@ -1,21 +1,35 @@
-<ul *ngIf="server; else noServer">
-  <li>
-    <strong>Name</strong>: {{ server.name }}
-    <a>
-      <mat-icon [routerLink]="['/servers', server.id, 'edit']" class="editIcon">
-        edit
-      </mat-icon>
-    </a>
-  </li>
-  <li><strong>Description</strong>: {{ server.description }}</li>
-  <li><strong>Status</strong>: {{ server.status ? "online" : "offline" }}</li>
+<div class="row">
+  <div class="col-md-6 serverDetailsWrapper">
+    <ul *ngIf="server; else noServer">
+      <li>
+        <strong>Name</strong>: {{ server.name }}
+        <a>
+          <mat-icon
+            [routerLink]="['/servers', server.id, 'edit']"
+            class="editIcon"
+          >
+            edit
+          </mat-icon>
+        </a>
+      </li>
+      <li><strong>Description</strong>: {{ server.description }}</li>
+      <li>
+        <strong>Status</strong>: {{ server.status ? "online" : "offline" }}
+      </li>
+    </ul>
 
-  <li>
+    <ng-template #noServer>
+      <p>no server with that Id</p>
+    </ng-template>
+  </div>
+  <div class="col-md-6 buttonsWrapper">
+    <button [ngClass]="server.status ? 'btn btn-danger' : 'btn btn-success'">
+      {{ server.status ? "Turn Off" : "Turn On" }}
+    </button>
+    <button type="button" class="btn btn-danger">Delete</button>
+  </div>
+  <div class="col-12 consoleWrapper">
     <strong>Logs</strong>:
     <div class="console">{{ server.logs }}</div>
-  </li>
-</ul>
-
-<ng-template #noServer>
-  <p>no server with that Id</p>
-</ng-template>
+  </div>
+</div>
