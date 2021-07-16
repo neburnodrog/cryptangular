@@ -9,9 +9,14 @@ import { ServerEditComponent } from './container/servers/server-edit/server-edit
 
 const appRoutes: Routes = [
   { path: '', component: HomeContainerComponent },
-  { path: 'servers', component: ServersContainerComponent },
-  { path: 'servers/:id', component: ServerDetailsComponent },
-  { path: 'servers/:id/edit', component: ServerEditComponent },
+  {
+    path: 'servers',
+    component: ServersContainerComponent,
+    children: [
+      { path: ':id', component: ServerDetailsComponent },
+      { path: ':id/edit', component: ServerEditComponent },
+    ],
+  },
   { path: 'crypto', component: CryptoContainerComponent },
   { path: 'charts', component: ChartsContainerComponent },
 ];

@@ -1,21 +1,15 @@
 <ul *ngIf="server; else noServer">
   <li>
-    <h3>Name: {{ server.name }}</h3>
+    <strong>Name</strong>: {{ server.name }}
+    <a>
+      <mat-icon [routerLink]="['/servers', server.id, 'edit']" class="editIcon">
+        edit
+      </mat-icon>
+    </a>
   </li>
   <li><strong>Description</strong>: {{ server.description }}</li>
   <li><strong>Status</strong>: {{ server.status ? "online" : "offline" }}</li>
-  <li>
-    <a routerLink="/servers" type="button" class="btn btn-primary">
-      Back to Server's list
-    </a>
-    <a
-      [routerLink]="['/servers', server.id, 'edit']"
-      type="button"
-      class="btn btn-primary"
-    >
-      Edit Server
-    </a>
-  </li>
+
   <li>
     <strong>Logs</strong>:
     <div class="console">{{ server.logs }}</div>

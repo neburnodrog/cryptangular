@@ -1,6 +1,8 @@
 a {
-  margin-top: 5rem;
-  margin-right: 3rem;
+  margin-left: 1rem;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 strong {
@@ -11,11 +13,17 @@ ul {
   list-style-type: none;
 }
 
+li {
+  margin-bottom: 1rem;
+}
+
 .console {
   font-family: monospace;
-  background-color: hsl(192deg 100% 11%);
+  background-color: hsl(192deg 80% 21%);
   color: whitesmoke;
   padding: 3rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }
 
 h3 {

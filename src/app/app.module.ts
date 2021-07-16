@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContainerComponent } from './container/container.component';
@@ -42,6 +44,8 @@ import { CryptoContainerComponent } from './container/crypto-container/crypto-co
     AppRoutingModule,
     FormsModule,
     HighchartsChartModule,
+    NoopAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
