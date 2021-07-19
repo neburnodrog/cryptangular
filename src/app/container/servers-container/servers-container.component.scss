@@ -1,5 +1,9 @@
+.servers-container {
+  width: 100%;
+  margin: 0;
+}
+
 .one {
-  border-right: 2px solid darkslateblue;
   max-height: 60vh;
   overflow: scroll;
   -ms-overflow-style: none;

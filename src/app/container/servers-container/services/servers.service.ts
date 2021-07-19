@@ -28,6 +28,13 @@ export class ServersService {
     server.status = !server.status;
   }
 
+  updateNameAndDescription(id: string, name: string, description: string) {
+    const serverToUpdate = this.servers.find((server) => server.id === id);
+
+    serverToUpdate.name = name;
+    serverToUpdate.description = description;
+  }
+
   deleteServer(server: Server) {
     const serverIndex = this.servers.findIndex((s) => s === server);
     this.servers.splice(serverIndex, 1);

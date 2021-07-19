@@ -23,13 +23,18 @@
     </ng-template>
   </div>
   <div class="col-md-6 buttonsWrapper">
-    <button [ngClass]="server.status ? 'btn btn-danger' : 'btn btn-success'">
+    <button
+      [ngClass]="server.status ? 'btn btn-danger' : 'btn btn-success'"
+      (click)="onStatusChange()"
+    >
       {{ server.status ? "Turn Off" : "Turn On" }}
     </button>
-    <button type="button" class="btn btn-danger">Delete</button>
+    <button type="button" class="btn btn-danger" (click)="onDeleteServer()">
+      Delete
+    </button>
   </div>
   <div class="col-12 consoleWrapper">
-    <strong>Logs</strong>:
+    <strong>Logs: </strong>
     <div class="console">{{ server.logs }}</div>
   </div>
 </div>

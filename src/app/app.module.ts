@@ -19,11 +19,15 @@ import { ServersContainerComponent } from './container/servers-container/servers
 import { ChartsContainerComponent } from './container/charts-container/charts-container.component';
 import { HomeContainerComponent } from './container/home-container/home-container.component';
 import { ServerDetailsComponent } from './container/servers-container/server-details/server-details.component';
-import { ServerEditComponent } from './container/servers/server-edit/server-edit.component';
+import { ServerEditComponent } from './container/servers-container/server-edit/server-edit.component';
 import { CryptoContainerComponent } from './container/crypto-container/crypto-container.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
+import { CanDeactivateGuard } from './container/servers-container/server-edit/can-deactivate.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './container/servers-container/services/server-resolver.service';
+import { ServersService } from './container/servers-container/services/servers.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import { AuthService } from './auth.service';
     ServerEditComponent,
     CryptoContainerComponent,
     PageNotFoundComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,13 @@ import { AuthService } from './auth.service';
     NoopAnimationsModule,
     MaterialModule,
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService,
+    AuthGuard,
+    CanDeactivateGuard,
+    ServersService,
+    ServerResolver,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

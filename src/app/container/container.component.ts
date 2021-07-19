@@ -7,7 +7,6 @@ import { ServersService } from './servers-container/services/servers.service';
   selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
-  providers: [ServersService],
 })
 export class ContainerComponent implements OnInit {
   servers: Server[] = [];

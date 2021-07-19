@@ -21,13 +21,5 @@ export class ServerComponent implements OnInit {
     return this.server.status ? 'online' : 'offline';
   }
 
-  onToggleStatus(newServerStatus: boolean) {
-    this.server.status = newServerStatus;
-  }
-
-  onDeleteServer() {
-    this.serverService.deleteServer(this.server);
-  }
-
   ngOnInit(): void {}
 }
