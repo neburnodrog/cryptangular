@@ -1,6 +1,7 @@
 .routesContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-flow: row;
   padding: 3rem;
   border-left: 1px solid #dee2e6;
   border-right: 1px solid #dee2e6;
@@ -20,4 +21,10 @@ a:hover {
 
 :host ::ng-deep router-outlet + app-crypto-container {
   width: 100%;
+}
+
+:host ::ng-deep router-outlet + app-crypto-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }

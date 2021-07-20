@@ -12,7 +12,11 @@
 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+        <mat-cell *matCellDef="let row">
+          <a [routerLink]="getDetailRoute(row.id)">
+            {{ row.name }}
+          </a>
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="symbol">

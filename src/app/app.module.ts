@@ -34,6 +34,9 @@ import { CanDeactivateGuard } from './container/servers-container/server-edit/ca
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './container/servers-container/services/server-resolver.service';
 import { ServersService } from './container/servers-container/services/servers.service';
+import { CryptoDetailsComponent } from './container/crypto-container/crypto-details/crypto-details.component';
+import { ChartComponent } from './chart/chart.component';
+import { DetailsMenuComponent } from './container/crypto-container/details-menu/details-menu.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { ServersService } from './container/servers-container/services/servers.s
     CryptoContainerComponent,
     PageNotFoundComponent,
     ErrorPageComponent,
+    CryptoDetailsComponent,
+    ChartComponent,
+    DetailsMenuComponent,
   ],
   imports: [
     BrowserModule,

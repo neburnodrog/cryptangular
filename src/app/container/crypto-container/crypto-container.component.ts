@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { CryptoData } from './crypto.model';
+import { CryptoAssetData } from './crypto.model';
 import { GetCryptoDataService } from './get-crypto-data.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { GetCryptoDataService } from './get-crypto-data.service';
   styleUrls: ['./crypto-container.component.scss'],
 })
 export class CryptoContainerComponent implements OnInit {
-  cryptoList: CryptoData[];
-  dataSource: MatTableDataSource<CryptoData>;
+  cryptoList: CryptoAssetData[];
+  dataSource: MatTableDataSource<CryptoAssetData>;
 
   constructor(public cryptoService: GetCryptoDataService) {}
 
@@ -20,5 +20,9 @@ export class CryptoContainerComponent implements OnInit {
       this.cryptoList = cryptoResponse.data;
       this.dataSource = new MatTableDataSource(this.cryptoList);
     });
+  }
+
+  getDetailRoute(id: string) {
+    return '/crypto/' + id;
   }
 }

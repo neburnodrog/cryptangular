@@ -10,6 +10,7 @@ import { CanDeactivateGuard } from './container/servers-container/server-edit/ca
 import { ServerEditComponent } from './container/servers-container/server-edit/server-edit.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './container/servers-container/services/server-resolver.service';
+import { CryptoDetailsComponent } from './container/crypto-container/crypto-details/crypto-details.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
@@ -31,7 +32,14 @@ const appRoutes: Routes = [
       },
     ],
   },
-  { path: 'crypto', component: CryptoContainerComponent },
+  {
+    path: 'crypto',
+    component: CryptoContainerComponent,
+  },
+  {
+    path: 'crypto/:id',
+    component: CryptoDetailsComponent,
+  },
   { path: 'charts', component: ChartsContainerComponent },
   // { path: 'not-found', component: PageNotFoundComponent },
   {
