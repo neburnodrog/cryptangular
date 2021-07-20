@@ -1,3 +1,6 @@
-<app-details-menu></app-details-menu>
-<app-chart [id]="id" [interval]="interval" [name]="cryptoData.name">
-</app-chart>
+<app-crypto-options-menu></app-crypto-options-menu>
+<p *ngIf="!cryptoData"></p>
+<div *ngIf="cryptoData">
+  <app-chart [id]="id" [interval]="interval" [name]="cryptoData.name">
+  </app-chart>
+</div>

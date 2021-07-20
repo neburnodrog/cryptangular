@@ -36,7 +36,7 @@ import { ServerResolver } from './container/servers-container/services/server-re
 import { ServersService } from './container/servers-container/services/servers.service';
 import { CryptoDetailsComponent } from './container/crypto-container/crypto-details/crypto-details.component';
 import { ChartComponent } from './chart/chart.component';
-import { DetailsMenuComponent } from './container/crypto-container/details-menu/details-menu.component';
+import { CryptoOptionsMenuComponent } from './container/crypto-container/crypto-options-menu/crypto-options-menu.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,7 @@ import { DetailsMenuComponent } from './container/crypto-container/details-menu/
     ErrorPageComponent,
     CryptoDetailsComponent,
     ChartComponent,
-    DetailsMenuComponent,
+    CryptoOptionsMenuComponent,
   ],
   imports: [
     BrowserModule,

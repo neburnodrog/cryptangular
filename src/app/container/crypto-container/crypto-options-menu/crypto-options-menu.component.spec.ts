@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailsMenuComponent } from './details-menu.component';
+import { CryptoOptionsMenuComponent } from './crypto-options-menu.component';
 
-describe('DetailsMenuComponent', () => {
-  let component: DetailsMenuComponent;
-  let fixture: ComponentFixture<DetailsMenuComponent>;
+describe('CryptoOptionsMenuComponent', () => {
+  let component: CryptoOptionsMenuComponent;
+  let fixture: ComponentFixture<CryptoOptionsMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailsMenuComponent ]
+      declarations: [ CryptoOptionsMenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailsMenuComponent);
+    fixture = TestBed.createComponent(CryptoOptionsMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

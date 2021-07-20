@@ -36,6 +36,8 @@ export class ChartComponent implements OnInit {
             title: {
               text: 'Time',
             },
+            type: 'datetime',
+            tickInterval: 24 * 3600 * 1000,
           },
           yAxis: {
             title: {
