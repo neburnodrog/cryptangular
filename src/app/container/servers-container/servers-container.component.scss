@@ -1,11 +1,12 @@
 .servers-container {
-  width: 100%;
+  width: 80vw;
   margin: 0;
 }
 
 .one {
   max-height: 60vh;
   overflow: scroll;
+  padding: 2rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

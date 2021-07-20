@@ -5,7 +5,7 @@
   border-left: 1px solid #dee2e6;
   border-right: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6;
-  min-width: 100%;
+  width: 100%;
 }
 
 a.active {
@@ -16,4 +16,8 @@ a.active {
 
 a:hover {
   background-color: rgba(231, 231, 231, 0.753);
+}
+
+:host ::ng-deep router-outlet + app-crypto-container {
+  width: 100%;
 }
