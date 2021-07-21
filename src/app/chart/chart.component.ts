@@ -33,16 +33,17 @@ export class ChartComponent implements OnInit {
             text: `${this.name} history`,
           },
           xAxis: {
-            title: {
-              text: 'Time',
-            },
+            title: { text: 'Time' },
             type: 'datetime',
-            tickInterval: 24 * 3600 * 1000,
+            plotBands: [
+              {
+                from: new Date(this.data[0].date).valueOf(),
+                to: new Date(this.data[this.data.length - 1].date).valueOf(),
+              },
+            ],
           },
           yAxis: {
-            title: {
-              text: 'Price (USD)',
-            },
+            title: { text: 'Price (USD)' },
           },
           series: [
             {

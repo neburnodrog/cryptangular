@@ -1,5 +1,3 @@
-export class ChartCofig {
-  getChartOptions(name: string) {
-    return;
-  }
-}
+const ChartConfig = {};
+
+export default ChartConfig;
