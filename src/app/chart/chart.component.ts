@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {
   CryptoHistoryData,
@@ -11,19 +11,21 @@ import { GetCryptoDataService } from '../container/crypto-container/get-crypto-d
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss'],
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements OnInit, OnChanges {
   Highcharts: typeof Highcharts = Highcharts;
   @Input() id: string;
   @Input() name: string;
   @Input() interval: string;
+  @Input() startDate: number;
+  @Input() endDate: number;
   chartOptions: Highcharts.Options;
   data: CryptoHistoryData[];
 
   constructor(private cryptoService: GetCryptoDataService) {}
 
-  ngOnInit(): void {
+  getHistoryData(startDate: number, endDate: number) {
     this.cryptoService
-      .getCryptoHistory(this.id, this.interval)
+      .getCryptoHistory(this.id, this.interval, startDate, endDate)
       .subscribe((resp: HistoryResponse) => {
         this.data = resp.data;
 
@@ -47,11 +49,21 @@ export class ChartComponent implements OnInit {
           series: [
             {
               name: this.name,
-              data: this.data.map((time) => +time.priceUsd),
+              data: this.data.map((dataPoint) => +dataPoint.priceUsd),
               type: 'line',
             },
           ],
         };
       });
+  }
+
+  ngOnChanges() {
+    console.log(this.startDate);
+    console.log(this.endDate);
+    this.getHistoryData(this.startDate, this.endDate);
+  }
+
+  ngOnInit(): void {
+    this.getHistoryData(this.startDate, this.endDate);
   }
 }

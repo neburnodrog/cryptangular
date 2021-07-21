@@ -1,6 +1,18 @@
-<app-crypto-options-menu></app-crypto-options-menu>
+<app-crypto-options-menu
+  [cryptoId]="id"
+  [startDate]="startDate | toHTMLString"
+  [endDate]="endDate | toHTMLString"
+  [cryptoIdList]="cryptoIdList"
+  (rerender)="onRerender($event)"
+></app-crypto-options-menu>
 <p *ngIf="!cryptoData"></p>
 <div *ngIf="cryptoData">
-  <app-chart [id]="id" [interval]="interval" [name]="cryptoData.name">
+  <app-chart
+    [id]="id"
+    [interval]="interval"
+    [name]="cryptoData.name"
+    [startDate]="startDate"
+    [endDate]="endDate"
+  >
   </app-chart>
 </div>

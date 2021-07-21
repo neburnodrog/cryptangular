@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import {
   AssetByIdResponse,
   AssetsResponse,
-  CryptoAssetData,
   HistoryResponse,
 } from './crypto.model';
 
@@ -21,13 +20,7 @@ export class GetCryptoDataService {
     );
   }
 
-  getCryptoHistory(id: string, interval: string, start?: string, end?: string) {
-    if (!start || !end) {
-      const now = Date.now();
-      end = now.toString();
-      start = (now - 30 * 24 * 60 * 60 * 1000).toString();
-    }
-
+  getCryptoHistory(id: string, interval: string, start: number, end: number) {
     const url = `https://api.coincap.io/v2/assets/${id}/history`;
 
     let searchParams = new HttpParams();

@@ -37,6 +37,7 @@ import { ServersService } from './container/servers-container/services/servers.s
 import { CryptoDetailsComponent } from './container/crypto-container/crypto-details/crypto-details.component';
 import { ChartComponent } from './chart/chart.component';
 import { CryptoOptionsMenuComponent } from './container/crypto-container/crypto-options-menu/crypto-options-menu.component';
+import { dateToHTMLString } from './container/crypto-container/crypto-details/dateToString.pipe';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { CryptoOptionsMenuComponent } from './container/crypto-container/crypto-
     CryptoDetailsComponent,
     ChartComponent,
     CryptoOptionsMenuComponent,
+    dateToHTMLString,
   ],
   imports: [
     BrowserModule,
