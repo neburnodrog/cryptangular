@@ -26,7 +26,6 @@ export class ChartComponent implements OnInit {
       .getCryptoHistory(this.id, this.interval)
       .subscribe((resp: HistoryResponse) => {
         this.data = resp.data;
-        console.log(this.data);
 
         this.chartOptions = {
           title: {
@@ -37,8 +36,8 @@ export class ChartComponent implements OnInit {
             type: 'datetime',
             plotBands: [
               {
-                from: new Date(this.data[0].date).valueOf(),
-                to: new Date(this.data[this.data.length - 1].date).valueOf(),
+                from: this.data[0].time,
+                to: this.data[this.data.length - 1].time,
               },
             ],
           },
