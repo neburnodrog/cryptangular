@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './auth-guard.service';
 import { ChartsContainerComponent } from './container/charts-container/charts-container.component';
 import { CryptoContainerComponent } from './container/crypto-container/crypto-container.component';
 import { HomeContainerComponent } from './container/home-container/home-container.component';
@@ -11,13 +10,14 @@ import { ServerEditComponent } from './container/servers-container/server-edit/s
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './container/servers-container/services/server-resolver.service';
 import { CryptoDetailsComponent } from './container/crypto-container/crypto-details/crypto-details.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth-guard.service';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeContainerComponent },
   {
     path: 'servers',
-    canActivateChild: [AuthGuard],
     component: ServersContainerComponent,
     children: [
       {
@@ -31,17 +31,27 @@ const appRoutes: Routes = [
         canDeactivate: [CanDeactivateGuard],
       },
     ],
+    canActivate: [AuthGuard],
   },
   {
     path: 'crypto',
     component: CryptoContainerComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'crypto/:id',
     component: CryptoDetailsComponent,
+    canActivate: [AuthGuard],
   },
-  { path: 'charts', component: ChartsContainerComponent },
-  // { path: 'not-found', component: PageNotFoundComponent },
+  {
+    path: 'charts',
+    component: ChartsContainerComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'auth/:mode',
+    component: AuthComponent,
+  },
   {
     path: 'not-found',
     component: ErrorPageComponent,

@@ -1,5 +1,5 @@
 <div *ngIf="!cryptoList">
-  <p>Loading</p>
+  <app-loading-spinner></app-loading-spinner>
 </div>
 
 <div *ngIf="cryptoList && cryptoList.length > 0">

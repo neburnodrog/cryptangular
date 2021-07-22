@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -28,8 +28,6 @@ import { ServerDetailsComponent } from './container/servers-container/server-det
 import { ServerEditComponent } from './container/servers-container/server-edit/server-edit.component';
 import { CryptoContainerComponent } from './container/crypto-container/crypto-container.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuard } from './auth-guard.service';
-import { AuthService } from './auth.service';
 import { CanDeactivateGuard } from './container/servers-container/server-edit/can-deactivate.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './container/servers-container/services/server-resolver.service';
@@ -38,6 +36,12 @@ import { CryptoDetailsComponent } from './container/crypto-container/crypto-deta
 import { ChartComponent } from './chart/chart.component';
 import { CryptoOptionsMenuComponent } from './container/crypto-container/crypto-options-menu/crypto-options-menu.component';
 import { dateToHTMLString } from './container/crypto-container/crypto-details/dateToString.pipe';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthComponent } from './auth/auth.component';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,10 @@ import { dateToHTMLString } from './container/crypto-container/crypto-details/da
     ChartComponent,
     CryptoOptionsMenuComponent,
     dateToHTMLString,
+    AuthComponent,
+    LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +80,7 @@ import { dateToHTMLString } from './container/crypto-container/crypto-details/da
     MatTableModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,

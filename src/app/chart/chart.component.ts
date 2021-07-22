@@ -36,12 +36,8 @@ export class ChartComponent implements OnInit, OnChanges {
           xAxis: {
             title: { text: 'Time' },
             type: 'datetime',
-            plotBands: [
-              {
-                from: this.data[0].time,
-                to: this.data[this.data.length - 1].time,
-              },
-            ],
+            min: this.data[0].time,
+            max: this.data[this.data.length - 1].time,
           },
           yAxis: {
             title: { text: 'Price (USD)' },
@@ -49,7 +45,10 @@ export class ChartComponent implements OnInit, OnChanges {
           series: [
             {
               name: this.name,
-              data: this.data.map((dataPoint) => +dataPoint.priceUsd),
+              data: this.data.map((dataPoint) => [
+                dataPoint.time,
+                +dataPoint.priceUsd,
+              ]),
               type: 'line',
             },
           ],
